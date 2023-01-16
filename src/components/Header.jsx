@@ -21,6 +21,9 @@ const HeaderStyle = styled.header`
   }
   nav {
     display: flex;
+    .close {
+      display: none;
+    }
     ul {
       display: flex;
       gap: 20px;
@@ -65,6 +68,7 @@ const HeaderStyle = styled.header`
       font-size: 20px;
       line-height: 2.8;
       .close {
+        display: block;
         position: absolute;
         top: -10px;
         right: 20px;
