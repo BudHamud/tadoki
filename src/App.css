@@ -1,0 +1,19 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat";
+    color: #FFF;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    background-color: #133837;
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #d3a7e0;
+}
