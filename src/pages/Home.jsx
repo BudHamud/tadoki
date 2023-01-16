@@ -8,6 +8,7 @@ import { useState } from "react";
 import Modal from "../components/Modal";
 
 const StyledMain = styled.main`
+  padding-top: 60px;
   color: #fff;
   .aboutMe {
     margin-top: 150px;
@@ -100,7 +101,7 @@ const StyledMain = styled.main`
       background-color: #000c;
       img {
         max-width: 100%;
-        height: 80%;
+        max-height: 80%;
       }
       button {
         font-size: 20px;
@@ -124,14 +125,13 @@ const StyledMain = styled.main`
       span {
         color: #abb2bf;
         &:nth-child(2) {
-          color: #FFF;
+          color: #fff;
           &:hover {
             border-bottom: solid 1px #d3a7e0;
             cursor: pointer;
           }
         }
       }
-      
     }
     .msg {
       margin-top: 40px;
@@ -155,6 +155,63 @@ const StyledMain = styled.main`
               brightness(107%) contrast(101%);
           }
         }
+      }
+    }
+  }
+  @media screen and (max-width: 900px) {
+    .aboutMe {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      .text {
+        width: 80%;
+        margin-bottom: 20px;
+        p {
+          width: 100%;
+        }
+      }
+    }
+    .portfolio {
+      .header {
+        .divider {
+          width: 200px;
+        }
+      }
+      .content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        width: 540px;
+        gap: 40px;
+      }
+    }
+  }
+  @media screen and (max-width: 560px) {
+    .aboutMe {
+      .frame {
+        img {
+          width: 200px;
+        }
+      }
+    }
+    .portfolio {
+      .header {
+        width: 95%;
+        .divider {
+          width: 100%;
+        }
+      }
+      .content {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+        width: 100%;
+      }
+    }
+    .portfolio.contact {
+      .terms {
+        width: 90%;
+      }
+      .msg {
+        font-size: 15px;
       }
     }
   }
@@ -187,9 +244,9 @@ const Home = () => {
   return (
     <>
       <StyledMain>
-        <article className="aboutMe">
+        <article className="aboutMe" id="home">
           <section className="text">
-            <h3>{contextLang === "ES" ? "Sobre mi" : "About Me"}</h3>
+            <h3>{contextLang === "ES" ? "Sobre mí" : "About me"}</h3>
             <p>
               {contextLang === "ES"
                 ? `¡Hola! Soy un artista digital, me encantaría ayudarle a hacer sus
@@ -270,18 +327,26 @@ const Home = () => {
 
           <section className="terms">
             <p>
-              <span>{contextLang === 'ES' ? 'Al pedirme una comisión, usted acepta estos ' : 'By commissioning me, you agree to these '}</span>
-              <span onClick={() => setModal(!modal)}>{ contextLang === 'ES' ? 'términos de servicio' : 'terms of service' }</span>.
+              <span>
+                {contextLang === "ES"
+                  ? "Al pedirme una comisión, usted acepta estos "
+                  : "By commissioning me, you agree to these "}
+              </span>
+              <span onClick={() => setModal(!modal)}>
+                {contextLang === "ES"
+                  ? "términos de servicio"
+                  : "terms of service"}
+              </span>
+              .
             </p>
           </section>
 
-          {
-            modal ?
-            <Modal state={() => setModal(!modal)} /> : ''
-          }
+          {modal ? <Modal state={() => setModal(!modal)} /> : ""}
 
           <section className="msg">
-            <p>{contextLang === "ES" ? "Háblame por aquí" : "Message me here"}</p>
+            <p>
+              {contextLang === "ES" ? "Háblame por aquí" : "Message me here"}
+            </p>
             <p>
               <img src="/insta.svg" /> Tadokitaa
             </p>

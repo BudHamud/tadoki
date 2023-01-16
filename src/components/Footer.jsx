@@ -25,6 +25,26 @@ const FooterStyle = styled.footer`
       }
     }
   }
+  @media screen and (max-width: 560px) {
+    flex-direction: column;
+    align-items: center;
+    .personal {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 20px;
+      p {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    p {
+    span {
+      margin: 0
+    }
+  }
+  }
 `;
 
 const Footer = () => {

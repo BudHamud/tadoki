@@ -39,6 +39,11 @@ const ModalStyle = styled.div`
       }
     }
   }
+  @media screen and (max-width: 900px) {
+    .modal {
+      width: 90%;
+    }
+  }
 `;
 
 const Modal = ({ state }) => {

@@ -7,6 +7,10 @@
     color: #FFF;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 ::-webkit-scrollbar {
     background-color: #133837;
     width: 8px;

@@ -14,7 +14,7 @@ const CardStyle = styled.div`
     width: 100%;
     height: 100%;
     position: absolute;
-    z-index: 3;
+    z-index: 2;
     background-color: #0005;
     transition: ease-in-out .3s;
     display: flex;
